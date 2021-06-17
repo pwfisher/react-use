@@ -3,7 +3,7 @@ import { isBrowser } from './misc/util';
 
 const useMedia = (query: string, defaultState: boolean = false) => {
   const [state, setState] = useState(
-    isBrowser ? () => window.matchMedia(query).matches : defaultState
+    isBrowser ? () => !!window.matchMedia(query).matches : defaultState
   );
 
   useEffect(() => {
